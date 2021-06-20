@@ -2,7 +2,7 @@ name: Build package
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ develop ]
 
 jobs:
 
@@ -18,6 +18,6 @@ jobs:
         distribution: 'adopt'
 
     - name: Build with Maven
-      run: mvn -P github -B -ntp test verify deploy
+      run: mvn -P github -B -ntp deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
